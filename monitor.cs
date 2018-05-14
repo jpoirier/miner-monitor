@@ -11,8 +11,8 @@ namespace ProcessSample
         public static void Main(string[] args)
         {
             string rig = "";
-            string pool_1 = "";
-            string pool_2 = "";
+            string pool_1 = ""; // must include forward-slash at end of string
+            string pool_2 = ""; // must include forward-slash at end of string
             string key = "";
 
             if (args == null || args.Length < 2)
@@ -30,7 +30,7 @@ namespace ProcessSample
 
 
             ethminer.StartInfo.Arguments = "-U --cuda-schedule auto -P " + pool_1 + key + "/" + rig +
-                                          " -P " + pool_2 + "key" + "/" + rig;
+                                          " -P " + pool_2 + key + "/" + rig;
 
             Console.WriteLine("----- monitor starting for {0}...", rig);
             try
