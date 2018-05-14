@@ -11,20 +11,23 @@ namespace ProcessSample
         public static void Main(string[] args)
         {
             string rig ="";
+            string key ="";
 
-            if (args == null || args.Length == 0 ) {
-                Console.WriteLine("error, missing rig argument, exiting...");
+            if (args == null || args.Length < 2 ) {
+                Console.WriteLine("error, missing rig and key arguments, exiting...");
                 System.Environment.Exit(1);
             }
 
             rig = args[0];
+            key = args[1];
 
             Process ethminer = new Process();
             //ethminer.StartInfo.FileName = "D:/Users/thokk/z_projects/z_dev/gitlab.com/eth_monitor/ethminer.exe";
             ethminer.StartInfo.FileName = "C:/eth/miner/ethminer.exe";
 
-            
-            ethminer.StartInfo.Arguments = "-U --cuda-schedule auto -P http://eth-us2.dwarfpool.com:80/0xB1129EAF784d2598855AAa661D617Ac4dF09D24F/rig1 -P http://eth-us.dwarfpool.com:80/0xB1129EAF784d2598855AAa661D617Ac4dF09D24F/"+rig;
+
+            ethminer.StartInfo.Arguments = "-U --cuda-schedule auto -P http://eth-us2.dwarfpool.com:80/" + key + "/" + rig +
+                                          " -P http://eth-us.dwarfpool.com:80/" + "key" + "/" + rig;
 
             Console.WriteLine("----- monitor starting for {0}...", rig);
             try {
@@ -54,7 +57,6 @@ namespace ProcessSample
                         }
                     }
                 } while (!ethminer.WaitForExit(-1));
-
 
                 Console.WriteLine();
                 Console.WriteLine("Process exit code: {0}", ethminer.ExitCode);
