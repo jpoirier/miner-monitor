@@ -45,11 +45,11 @@ namespace ProcessSample
                         Console.WriteLine();
 
                         // Display current process statistics.
-                        Console.WriteLine("{0} {1} -", ethminer.ToString(), rig);
+                        Console.WriteLine("{0} {1}", ethminer.ToString(), rig);
                         Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("    user processor time: {0}", ethminer.UserProcessorTime);
-                        Console.WriteLine("    privileged processor time: {0}", ethminer.PrivilegedProcessorTime);
-                        Console.WriteLine("    total processor time: {0}", ethminer.TotalProcessorTime);
+                        Console.WriteLine("    user processor time       : {0}", ethminer.UserProcessorTime);
+                        Console.WriteLine("    privileged processor time : {0}", ethminer.PrivilegedProcessorTime);
+                        Console.WriteLine("    total processor time      : {0}", ethminer.TotalProcessorTime);
 
                         if (!ethminer.Responding) {
                             Console.WriteLine("Status = Not Responding");
