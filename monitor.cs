@@ -10,76 +10,44 @@ namespace ProcessSample
     {
         public static void Main(string[] args)
         {
-            string rig = "";
-            string pool_1 = ""; // must include forward-slash at end of string
-            string pool_2 = ""; // must include forward-slash at end of string
-            string key = "";
-
-            if (args == null || args.Length < 4)
+            if (args == null || args.Length != 2)
             {
-                Console.WriteLine("error, missing rig, key, and/or pool 1 and 2 arguments, exiting...");
+                Console.WriteLine("error, missing argument string, exiting...");
                 System.Environment.Exit(1);
             }
 
-            rig = args[0];
-            key = args[1];
-            pool_1 = args[2];
-            pool_2 = args[3];
+            Process _process = new Process();
+            _process.StartInfo.FileName = args[0];  // miner path and name, e.g. c:/eth/miner/ethminer.exe
+            _process.StartInfo.Arguments = args[1]; // miner option strings enclosed in quotes
 
+            Console.WriteLine("----- monitor starting with options:");
+            Console.WriteLine("{0}", args[1]);
 
-            Process ethminer = new Process();
-            //ethminer.StartInfo.FileName = "D:/Users/thokk/z_projects/z_dev/gitlab.com/eth_monitor/ethminer.exe";
-            ethminer.StartInfo.FileName = "C:/eth/miner/ethminer.exe";
-
-
-            ethminer.StartInfo.Arguments = "-U --cuda-schedule auto -P " + pool_1 + key + "/" + rig +
-                                          " -P " + pool_2 + key + "/" + rig;
-
-            Console.WriteLine("----- monitor starting for {0}...", rig);
             try
             {
-                // Start the process.
-                ethminer.Start();
+                _process.Start();
 
-                // Display the process statistics until
-                // the user closes the program.
-                do
+                while (!_process.HasExited && _process.Responding)
                 {
-                    if (!ethminer.HasExited)
-                    {
-                        Thread.Sleep(5000);
+                    _process.Refresh();
+                    Console.WriteLine();
+                    Console.WriteLine("--- Total process time: {0}", _process.TotalProcessorTime);
 
-                        // Refresh the current process property values.
-                        ethminer.Refresh();
-                        Console.WriteLine();
-
-                        // Display current process statistics.
-                        Console.WriteLine("{0} {1}", ethminer.ToString(), rig);
-                        Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("    user processor time       : {0}", ethminer.UserProcessorTime);
-                        Console.WriteLine("    privileged processor time : {0}", ethminer.PrivilegedProcessorTime);
-                        Console.WriteLine("    total processor time      : {0}", ethminer.TotalProcessorTime);
-
-                        if (!ethminer.Responding)
-                        {
-                            Console.WriteLine("Status = Not Responding");
-                            break;
-                        }
-                    }
-                } while (!ethminer.WaitForExit(-1));
+                    Thread.Sleep(5000);
+                }
 
                 Console.WriteLine();
-                Console.WriteLine("Process exit code: {0}", ethminer.ExitCode);
+                Console.WriteLine("Process exit code: {0}", _process.ExitCode);
             }
             finally
             {
-                if (ethminer != null)
+                if (_process != null)
                 {
-                    ethminer.Close();
+                    _process.Close();
                 }
             }
 
-            //Console.WriteLine("exiting monitor...");
+            // reboot
             Process.Start("shutdown", "/r /t 0");
         }
     }
