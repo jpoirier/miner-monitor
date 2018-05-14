@@ -15,14 +15,17 @@ namespace ProcessSample
             string pool_2 = ""; // must include forward-slash at end of string
             string key = "";
 
-            if (args == null || args.Length < 2)
+            if (args == null || args.Length < 4)
             {
-                Console.WriteLine("error, missing rig and key arguments, exiting...");
+                Console.WriteLine("error, missing rig, key, and/or pool 1 and 2 arguments, exiting...");
                 System.Environment.Exit(1);
             }
 
             rig = args[0];
             key = args[1];
+            pool_1 = args[2];
+            pool_2 = args[3];
+
 
             Process ethminer = new Process();
             //ethminer.StartInfo.FileName = "D:/Users/thokk/z_projects/z_dev/gitlab.com/eth_monitor/ethminer.exe";
