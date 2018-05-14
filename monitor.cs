@@ -18,7 +18,7 @@ namespace ProcessSample
 
             Process _process = new Process();
             _process.StartInfo.FileName = args[0];  // miner path and name, e.g. c:/eth/miner/ethminer.exe
-            _process.StartInfo.Arguments = args[1]; // miner option strings enclosed in quotes
+            _process.StartInfo.Arguments = args[1]; // miner options, must be enclosed in quotes
 
             Console.WriteLine("----- monitor starting with options:");
             Console.WriteLine("{0}", args[1]);
