@@ -14,7 +14,7 @@ stupid simple crypto mining monitor
 
 
 ## Misc
-To get rid of dialogue boxes on Windows:
+To get rid of error dialogue box prompts on Windows:
     https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
 
 
