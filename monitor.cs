@@ -1,5 +1,5 @@
-// dotnet new console -o myApp
-// dotnet publish -c Release --self-contained -r win10-x64 | linux-x64
+// dotnet new console -o monitor
+// dotnet publish -c Release -r win10-x64 | linux-x64
 using System;
 using System.Threading;
 using System.Diagnostics;
@@ -33,7 +33,7 @@ namespace ProcessSample
                     Console.WriteLine();
                     Console.WriteLine("--- Total process time: {0}", _process.TotalProcessorTime);
 
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1 * 60 * 1000);
                 }
 
                 Console.WriteLine();
