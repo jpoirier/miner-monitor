@@ -1,8 +1,6 @@
-// dotnet new console -o monitor
-// dotnet publish -c Release -r win10-x64 | linux-x64
-// Get rid of dialogues on Windows:
-//  https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
-using System;
+// Copyright (c) 2018 Joseph D Poirier
+// Distributable under the terms of The New BSD License
+// that can be found in the LICENSE file.
 using System.Threading;
 using System.Diagnostics;
 
