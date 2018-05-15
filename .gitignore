@@ -1,4 +1,4 @@
 archives/*
 bin/*
 obj/*
-*/csproj
+*.csproj
