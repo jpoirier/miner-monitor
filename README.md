@@ -6,7 +6,7 @@ stupid simple crypto mining monitor that reboots the machine when the miner eith
 Argument order:
 
     1. path to the miner executable
-    2. *true* to reboot on erros/hangs or *false* to just restart the miner
+    2. true to reboot on erros/hangs or false to just restart the miner
     3. monitor thread sleep time in minutes
     4. miner options enclosed in quotes
 
