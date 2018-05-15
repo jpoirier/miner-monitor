@@ -3,7 +3,13 @@ stupid simple mining monitor
 
 
 ## Build example (assumes you have the dotnet sdk installed)
+    Not sure what the best way of doing this is?
+    
     $ cd miner-monitor
+    $ dotnet new console -o .
+
+        *delete the Program,cs file
+
     $ dotnet publish -c Release -r win10-x64 | linux-x64
 
 ## Misc
