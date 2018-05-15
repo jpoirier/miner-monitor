@@ -9,3 +9,6 @@ stupid simple mining monitor
 ## Misc
 To get rid of dialogues on Windows:
     https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
+ 
+## Notes
+Only tested on Windows 10.
