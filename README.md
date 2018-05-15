@@ -33,5 +33,8 @@ To get rid of error dialogue box prompts on Windows read:
 https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
 
 
+Get ethminer binaries on github [here](https://github.com/ethereum-mining/ethminer/releases)
+
+
 ## Notes
 Only tested on Windows 10.
