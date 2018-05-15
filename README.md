@@ -28,7 +28,7 @@ something similar to the following in your boot-up script file:
 ## Misc
 To get rid of error dialogue box prompts on Windows read:
 
-    https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
+https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
 
 
 ## Notes
