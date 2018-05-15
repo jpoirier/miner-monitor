@@ -6,9 +6,9 @@ stupid simple crypto mining monitor that either reboots the machine or restarts 
 Argument order:
 
     1. path to the miner executable
-    2. true to reboot on erros/hangs or false to just restart the miner
+    2. true to reboot or false to just restart the miner on erros/hangs
     3. monitor thread sleep time in minutes
-    4. miner options enclosed in quotes
+    4. miner executable options enclosed in quotes
 
 E.g. using etherminer with dwarfpool and the monitor thread sleeps for 5 minutes, you'd place
 something similar to the following in your boot-up script file:
