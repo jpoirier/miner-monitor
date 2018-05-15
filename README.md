@@ -1,5 +1,5 @@
 # miner-monitor
-stupid simple crypto mining monitor that reboots the machine when the miner either exits or stops responding
+stupid simple crypto mining monitor that either reboots the machine or restarts the miner if it exits or stops responding
 
 
 ## Usage
