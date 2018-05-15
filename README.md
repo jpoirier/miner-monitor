@@ -1,5 +1,5 @@
 # miner-monitor
-stupid simple mining monitor
+stupid simple crypto mining monitor
 
 
 ## Build example (assumes you have the dotnet sdk installed)
@@ -8,13 +8,15 @@ stupid simple mining monitor
     $ cd miner-monitor
     $ dotnet new console -o .
 
-        *delete the Program.cs file
+    *delete the Program.cs file
 
     $ dotnet publish -c Release -r win10-x64 | linux-x64
 
+
 ## Misc
-To get rid of dialogues on Windows:
+To get rid of dialogue boxes on Windows:
     https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
- 
+
+
 ## Notes
 Only tested on Windows 10.
