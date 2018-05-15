@@ -8,7 +8,8 @@ Argument order:
     2. monitor thread sleep time in minutes
     3. miner options enclosed in quotes
     
-E.g. using etherminer with dwarfpool and the monitor thread sleeps for 5 minutes, place the following in your boot-up script file:
+E.g. using etherminer with dwarfpool and the monitor thread sleeps for 5 minutes, you'd place
+something similar to the following in your boot-up script file:
 
     C:\eth\monitor\bin\Release\netcoreapp2.0\win10-x64\monitor.exe C:/eth/miner/ethminer.exe 5 "-U --cuda-schedule auto -P http://eth-us2.dwarfpool.com:80/0xgasdhjashjfghgfga/rig1 -P http://eth-us.dwarfpool.com:80/0xgasdhjashjfghgfga/rig1"
 
