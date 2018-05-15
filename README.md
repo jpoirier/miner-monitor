@@ -3,8 +3,7 @@ stupid simple mining monitor
 
 
 ## Build example (assumes you have the dotnet sdk installed)
-    $ dotnet new console -o monitor
-    $ cd monitor
+    $ cd miner-monitor
     $ dotnet publish -c Release -r win10-x64 | linux-x64
 
 ## Misc
