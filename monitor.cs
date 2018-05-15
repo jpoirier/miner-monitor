@@ -1,5 +1,7 @@
 // dotnet new console -o monitor
 // dotnet publish -c Release -r win10-x64 | linux-x64
+// Get rid of dialogues on Windows:
+//  https://www.raymond.cc/blog/disable-program-has-stopped-working-error-dialog-in-windows-server-2008/
 using System;
 using System.Threading;
 using System.Diagnostics;
@@ -12,17 +14,19 @@ namespace ProcessSample
         {
             if (args == null || args.Length != 2)
             {
-                Console.WriteLine("error, missing argument string, exiting...");
+                Console.WriteLine("error, missing argument (order: miner executable, sleep time in minutes, miner options), exiting...");
                 System.Environment.Exit(1);
             }
 
             Process _process = new Process();
             _process.StartInfo.FileName = args[0];  // miner path and name, e.g. c:/eth/miner/ethminer.exe
-            _process.StartInfo.Arguments = args[1]; // miner options, must be enclosed in quotes
+            _process.StartInfo.Arguments = args[2]; // miner options, must be enclosed in quotes
+            
 
             Console.WriteLine("----- monitor starting with options:");
-            Console.WriteLine("{0}", args[1]);
+            Console.WriteLine("{0}", args[2]);
 
+            int minutes = int.Parse(args[1]);       // sleep time
             try
             {
                 _process.Start();
@@ -33,7 +37,7 @@ namespace ProcessSample
                     Console.WriteLine();
                     Console.WriteLine("--- Total process time: {0}", _process.TotalProcessorTime);
 
-                    Thread.Sleep(1 * 60 * 1000);
+                    Thread.Sleep(minutes * 60 * 1000);
                 }
 
                 Console.WriteLine();
