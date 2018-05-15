@@ -2,6 +2,17 @@
 stupid simple crypto mining monitor
 
 
+## Usage
+Argument order:
+    1. path to the miner executable
+    2. monitor thread sleep time in minutes
+    3. miner options enclosed in quotes
+    
+E.g. using etherminer with dwarfpool and the monitor thread sleeps for 5 minutes
+
+C:\eth\monitor\bin\Release\netcoreapp2.0\win10-x64\monitor.exe C:/eth/miner/ethminer.exe 5 "-U --cuda-schedule auto -P http://eth-us2.dwarfpool.com:80/0xgasdhjashjfghgfga/rig1 -P http://eth-us.dwarfpool.com:80/0xgasdhjashjfghgfga/rig1"
+
+
 ## Build example (assumes you have the dotnet sdk installed)
     Not sure what the best way of doing this is?
     
