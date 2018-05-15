@@ -19,7 +19,7 @@ namespace ProcessSample
 
             string reboot = args[1];
 
-Start:
+        Start:
             Process _process = new Process();
             _process.StartInfo.FileName = args[0];  // miner path and name, e.g. c:/eth/miner/ethminer.exe
             _process.StartInfo.Arguments = args[3]; // miner options, must be enclosed in quotes
@@ -40,7 +40,6 @@ Start:
                     Thread.Sleep(minutes * 60 * 1000);
                 }
 
-                Console.WriteLine();
                 Console.WriteLine("Process exit code: {0}", _process.ExitCode);
             }
             finally
