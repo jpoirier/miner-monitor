@@ -17,17 +17,19 @@ namespace Monitor
                 System.Environment.Exit(1);
             }
 
-            string reboot = args[1];
+            string miner_path = args[0];        // miner path and name, e.g. c:/eth/miner/ethminer.exe
+            string reboot = args[1];            // reboot or just restart miner
+            int minutes = int.Parse(args[2]);   // sleep time
+            string miner_opts = args[3];        // miner options, must be enclosed in quotes
 
         Start:
             Process _process = new Process();
-            _process.StartInfo.FileName = args[0];  // miner path and name, e.g. c:/eth/miner/ethminer.exe
-            _process.StartInfo.Arguments = args[3]; // miner options, must be enclosed in quotes
+            _process.StartInfo.FileName = miner_path;
+            _process.StartInfo.Arguments = miner_opts;
 
             Console.WriteLine("----- monitor starting with options:");
-            Console.WriteLine("{0}", args[3]);
+            Console.WriteLine("{0}", miner_opts);
 
-            int minutes = int.Parse(args[2]);       // sleep time
             try
             {
                 _process.Start();
