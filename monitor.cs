@@ -56,6 +56,7 @@ namespace Monitor
             {
                 goto Start;
             }
+
             // reboot
             Process.Start("shutdown", "/r /t 0");
         }
