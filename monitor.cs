@@ -5,9 +5,9 @@ using System;
 using System.Threading;
 using System.Diagnostics;
 
-namespace ProcessSample
+namespace Monitor
 {
-    class ProcessMonitorSample
+    class MonitorProcess
     {
         public static void Main(string[] args)
         {
