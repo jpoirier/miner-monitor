@@ -2,3 +2,4 @@ archives/*
 bin/*
 obj/*
 *.csproj
+.vscode/*
